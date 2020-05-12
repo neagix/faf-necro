@@ -1,0 +1,327 @@
+UnitBlueprint {
+    Audio = {
+        AmbientMove = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Move_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        CaptureLoop = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Capture_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Construct = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Construct_Start',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        ConstructLoop = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Construct_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Destroyed = Sound {
+            Bank = 'UELDestroy',
+            Cue = 'UEL_Destroy_Med_Land',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        HoverKilledOnWater = Sound {
+            Bank = 'Explosions',
+            Cue = 'Expl_Water_Lrg_01',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        ReclaimLoop = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Reclaim_Loop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartCapture = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Capture_Start',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Move_Start',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartReclaim = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Reclaim_Start',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'UEL',
+            Cue = 'UEL0309_Move_Stop',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        UISelection = Sound {
+            Bank = 'Interface',
+            Cue = 'UEF_Select_Vehicle',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+    },
+    Buffs = {
+        {
+            Add = {
+                VeteranLevel2 = true,
+            },
+            BuffType = 'MAXHEALTH',
+            Value = 375,
+        },
+        {
+            Add = {
+                VeteranLevel2 = true,
+            },
+            BuffType = 'HEALTH',
+            Value = 375,
+        },
+        {
+            Add = {
+                VeteranLevel4 = true,
+            },
+            BuffType = 'MAXHEALTH',
+            Value = 375,
+        },
+        {
+            Add = {
+                VeteranLevel4 = true,
+            },
+            BuffType = 'HEALTH',
+            Value = 375,
+        },
+        {
+            Add = {
+                VeteranLevel5 = true,
+            },
+            BuffType = 'HEALTHREGENRATE',
+            Value = 2,
+        },
+    },
+    BuildIconSortPriority = 11,
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'UEF',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'REPAIR',
+        'RECLAIM',
+        'CAPTURE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'PATROLHELPER',
+	'NECRO',
+	'CONSTRUCTION',
+    },
+    CollisionOffsetY = -0.25,
+    CollisionOffsetZ = -0.1,
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1500,
+        MaxHealth = 1500,
+        RegenRate = 0,
+    },
+    Description = '<LOC uel0310_desc>Necro',
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_engineeringsuite >Engineering Suite',
+        },
+        AnimationBuild = '/units/UEL0309/uel0309_aopen.sca',
+        AnimationBuildRate = 5,
+        AnimationWater = '/units/UEL0309/uel0309_awheels.sca',
+        IdleEffects = {
+            Water = {
+                Effects = {
+                    {
+                        Bones = {
+                            'UEL0309',
+                        },
+                        Scale = 0.9,
+                        Type = 'SeaIdle02',
+                    },
+                },
+            },
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    MeshName = '/units/uel0309/uel0309_lod0.scm',
+                    AlbedoName = '/units/uel0309/uel0309_albedo.dds',
+                    SpecularName = '/units/uel0309/uel0309_specteam.dds',
+                    NormalsName = '/units/uel0309/uel0309_normalsTS.dds', 
+                    LODCutoff = 120,
+                    Scrolling = true,
+                    ShaderName = 'Unit',
+                },
+                {
+                    MeshName = '/units/uel0309/uel0309_lod1.scm',
+                    AlbedoName = '/units/uel0309/uel0309_lod1_albedo.dds',
+                    SpecularName = '/units/uel0309/uel0309_lod1_specteam.dds',
+                    NormalsName = '/units/uel0309/uel0309_lod1_normalsTS.dds', 
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                },
+            },
+        },
+        MovementEffects = {
+            Land = {
+                Effects = {
+                    {
+                        Bones = {
+                            'Exhaust_Left',
+                            'Exhaust_Right',
+                        },
+                        Type = 'GroundKickup01',
+                    },
+                },
+                Treads = {
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            BoneName = 'UEL0309',
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.3,
+                            TreadMarksSizeX = 0.9,
+                            TreadMarksSizeZ = 0.4,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+            Water = {
+                Effects = {
+                    {
+                        Bones = {
+                            'Front_Right_Wake',
+                        },
+                        Scale = 0.6,
+                        Type = 'LeftFrontWake',
+                    },
+                    {
+                        Bones = {
+                            'Front_Left_Wake',
+                        },
+                        Scale = 0.6,
+                        Type = 'RightFrontWake',
+                    },
+                    {
+                        Bones = {
+                            'UEL0309',
+                        },
+                        Scale = 0.3,
+                        Type = 'BackWake',
+                    },
+                },
+            },
+        },
+        PlaceholderMeshName = 'UXB0000',
+        SpawnRandomRotation = false,
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 3150,
+        BuildCostMass = 490,
+        BuildRate = 2,
+        BuildTime = 1050,
+        MaxEnergyUse = 500,
+        MaxMassUse = 50,
+        StorageEnergy = 200,
+        StorageMass = 20,
+        TeleportEnergyMod = 0.15,
+        TeleportMassMod = 1,
+        TeleportTimeMod = 0.01,
+    },
+    General = {
+        Category = 'Construction',
+        Classification = 'RULEUC_Engineer',
+        CommandCaps = {
+            RULEUCC_Attack = false,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Capture = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Nuke = false,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Stop = true,
+            RULEUCC_Transport = false,
+        },
+        FactionName = 'UEF',
+        Icon = 'amph',
+        SelectionPriority = 4,
+        TechLevel = 'RULEUTL_Secret',
+        UnitWeight = 1,
+    },
+    Intel = {
+        VisionRadius = 26,
+    },
+    Interface = {
+        HelpText = '<LOC uel0310_help>Necro',
+    },
+    LifeBarHeight = 0.15,
+    LifeBarOffset = 0.35,
+    LifeBarSize = 1,
+    Physics = {
+        BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Air = false,
+            LAYER_Land = true,
+            LAYER_Orbit = false,
+            LAYER_Seabed = false,
+            LAYER_Sub = false,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.4,
+        MaxBrake = 1.4,
+        MaxSpeed = 1.4,
+        MaxSpeedReverse = 1,
+        MaxSteerForce = 15,
+        MeshExtentsX = 1,
+        MeshExtentsY = 2.6,
+        MeshExtentsZ = 1.15,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_AmphibiousFloating',
+        TurnRadius = 0,
+        TurnRate = 70,
+    },
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = -0.1,
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.7,
+    SelectionThickness = 0.6,
+    SizeX = 0.85,
+    SizeY = 0.8,
+    SizeZ = 0.9,
+    StrategicIconName = 'icon_land3_engineer',
+    StrategicIconSortPriority = 85,
+    Transport = {
+        TransportClass = 3,
+    },
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Air = false,
+            Land = true,
+            Seabed = false,
+            Sub = false,
+            Water = false,
+        },
+    },
+}

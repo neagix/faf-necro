@@ -1,15 +1,15 @@
 name = "Necro Bot"
-uid = "6223f5f8-422c-11dc-8314-0800200c9a66"
-version = 2
-description = "Adds a T3 Necro Bot to each faction. The Necro turns wreckage back into working units through the reclaim process."
-author = "Silenthunter"
-url = "http://forums.gaspowered.com/viewtopic.php?t=17083"
+uid = "325038fc-941d-11ea-bb37-0242ac130002"
+version = 1
+description = "Adds a T3 Necro unit to each faction. The Necro turns wreckage back into working units through the reclaim process."
+author = "neagix"
+url = "https://github.com/neagix/faf-necro"
 selectable = true
 enabled = true
 exclusive = false
 ui_only = false
 requires = {}
 requiresNames = {}
-conflicts = {}
+conflicts = {"6223f5f8-422c-11dc-8314-0800200c9a66"}
 before = {}
 after = {}

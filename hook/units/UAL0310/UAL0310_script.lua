@@ -12,7 +12,6 @@
 #
 
 local AConstructionUnit = import('/lua/aeonunits.lua').AConstructionUnit
-local necro = import('/mods/necro/necro.lua')
 
 UAL0310 = Class(AConstructionUnit) {
 

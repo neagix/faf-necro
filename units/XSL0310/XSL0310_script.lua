@@ -1,3 +1,16 @@
+#****************************************************************************
+#**
+#**  File     :  /units/URL0310/URL0310_script.lua
+#**  Author(s):  neagix
+#**
+#**  Summary  :  Seraphim Unit Script
+#**
+#**  Copyright © 2020 neagix - licensed under a BSD 3-clause license
+#****************************************************************************
+#
+# SERAPHIM TIER 3 NECRO
+#
+
 local SConstructionUnit = import('/lua/seraphimunits.lua').SConstructionUnit
 
 XSL0310 = Class(SConstructionUnit) {

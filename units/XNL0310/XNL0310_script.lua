@@ -1,3 +1,16 @@
+#****************************************************************************
+#**
+#**  File     :  /units/URL0310/URL0310_script.lua
+#**  Author(s):  neagix
+#**
+#**  Summary  :  Nomads Unit Script
+#**
+#**  Copyright © 2020 neagix - licensed under a BSD 3-clause license
+#****************************************************************************
+#
+# NOMADS TIER 3 NECRO
+#
+
 local NConstructionUnit = import('/lua/nomadsunits.lua').NConstructionUnit
 
 XNL0310 = Class(NConstructionUnit) {

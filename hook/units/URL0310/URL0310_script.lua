@@ -1,32 +1,30 @@
 #****************************************************************************
 #**
-#**  File     :  /units/UEL0310/UEL0310_script.lua
+#**  File     :  /units/URL0310/URL0310_script.lua
 #**  Author(s):  neagix
 #**
-#**  Summary  :  Terran Unit Script
+#**  Summary  :  Cybran Unit Script
 #**
 #**  Copyright © 2020 neagix - licensed under a BSD 3-clause license
 #****************************************************************************
 #
-# TERRAN TECH 3 NECRO
+# CYBRAN TIER 3 NECRO
 #
 
-local TConstructionUnit = import('/lua/terranunits.lua').TConstructionUnit
+local CConstructionUnit = import('/lua/cybranunits.lua').CConstructionUnit
 
-local UEL0310 = Class(TConstructionUnit) {
+URL0310 = Class(CConstructionUnit) {
     BuildBones = {
-        AimBone = 0,
-        PitchBone = 'Turret_Barrel',
-        YawBone = 'Turret',
-        BuildEffectBones = { 'Turret_Muzzle01', 'Turret_Muzzle02', 'Turret_Muzzle03' },
+        YawBone = 'Buildpoint_Center',
+        PitchBone = 'Buildpoint_Center',
+        BuildEffectBones = {'Buildpoint_Left','Buildpoint_Center','Buildpoint_Right'},
     },
-    
     OnCreate=function(self)
-		self:SetCustomName("Necro")
-		TConstructionUnit.OnCreate(self)
+    self:SetCustomName("Necro")
+    CConstructionUnit.OnCreate(self)
     end,
-
-OnStartReclaim = function(self, spec)
+    
+    OnStartReclaim = function(self, spec)
 		self.RecBP=spec.AssociatedBP
 		# do not resurrect buildings or experimentals
 		if self.RecBP.CategoriesHash.STRUCTURE or self.RecBP.CategoriesHash.EXPERIMENTAL then
@@ -66,7 +64,6 @@ OnStopReclaim = function(self, target)
 			end)
 		end
     end,
-
+    
 }
-
-TypeClass = UEL0310
+TypeClass = URL0310
